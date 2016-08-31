@@ -1,0 +1,19 @@
+<!-- <div class="page-login"> -->
+    <div class="header">
+    <img src="/assets/img/TeamIcon.png" alt="logo" style="margin-top: 100px"/>
+    <h1>Demand Response</h1>
+    </div>
+
+    <h3>Sign In</h3>
+
+    <div class="login_box" ng-controller="LoginController as login">
+        <br><br>
+        <input name="searchbox" onfocus="if (this.value=='username') this.value = ''" type="text" value={{login.userName}} class="login_textBox">
+        <br><br>
+        <input name="paswordBox" onfocus="if (this.value=='password') this.value = ''" type="password" value={{login.password}} class="login_textBox" ng-keypress="login.enterKeyChangePage('/dashboard', $event)">
+        <br><br>
+        <button type="button" class="login_button" ng-click="login.changePage('/dashboard')">Submit</button>
+        <br><br>
+    </div>
+<!-- </div> -->
+

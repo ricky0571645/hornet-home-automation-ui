@@ -1,0 +1,31 @@
+<!DOCTYPE html >
+<html ng-app="myApp">
+
+<head>
+    <title>Load Shed Application</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href="assets/css/app.css" rel="stylesheet" />
+    <script src="app/shared/angular-1.5.7/angular.min.js"></script>
+    <script src="app/shared/angular-1.5.7/angular-route.js"></script>
+
+    <script src="app/shared/angular-1.5.7/angular-animate.js"></script>
+    <script src="bootstrap-gh-pages/bootstrap-gh-pages/ui-bootstrap-tpls-1.3.3.js"></script>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body >
+
+    <div class="page page-login" ng-view></div>
+
+    <!--Modules-->
+    <script src="app/app.module.js "></script>
+    <!--Controllers-->
+    <script src="app/components/login/LoginController.js"></script>
+    <script src="app/components/dashboard/DashboardController.js"></script>
+    <!-- Routes -->
+    <script src="app/app.routes.js"></script>
+
+</body>
+
+</html>

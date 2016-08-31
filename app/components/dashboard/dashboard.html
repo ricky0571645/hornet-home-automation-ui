@@ -1,0 +1,26 @@
+<!-- Side Bar -->
+<div id="sidebar">
+	<br>
+	<img src="/assets/img/TeamIcon.png" alt="logo" />
+	<br> <br>
+	<p>Logout</p>
+	<p>Settings</p>
+	<p>Report</p>
+</div>
+
+
+<div id="dataSquare" ng-controller="DashboardController as dash">
+
+	<div id="card" ng-init="dash.timeOut()">
+		<div id="header">Controller Status</div>
+		<hr>
+		<div class="spinner" ng-show="dash.loading" >
+		  <div class="double-bounce1"></div>
+		  <div class="double-bounce2"></div>
+		</div>
+		<div class= "disconnectedStatus" ng-show="!dash.loading" >
+			Disconnected
+		</div>
+	</div>
+
+</div>
