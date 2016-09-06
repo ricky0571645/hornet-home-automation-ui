@@ -12,107 +12,38 @@
 	<!-- Actual Dashboard Cards and Data-->
 	<div style="margin-left: 100px" ng-controller="DashboardController as dash">
 
-		<!--Controller Status Card -->
-		<div class="col-md-12 " ng-init="dash.timeOut()" >
-
-			<div class="col-md-4" >
-				<div id="card">
-					<div id="header">Controller Status</div>
-					<hr>
-					<div style="height:60%">
-						<div class="spinner" ng-show="dash.loading" >
-						  <div class="double-bounce1"></div>
-						  <div class="double-bounce2"></div>
+		
+		<div class="col-md-12 " ng-init="dash.timeOut()">
+			<!-- Card to display the data for the main microcontroller(master) -->
+			<div  ng-repeat = "homeItem in dash.homeItemStack">
+				<div class="col-md-4" >
+					<div id="card">
+						<div id="header">{{homeItem.itemTitle}}</div>
+						<hr>
+						<!-- items in the body of the card -->
+						<div style="height:60%">
+							<div class="spinner" ng-show="dash.loading" >
+							  <div class="double-bounce1"></div>
+							  <div class="double-bounce2"></div>
+							</div>
+							<!-- show if the item is disconnected -->
+							<div class= "disconnectedStatus" ng-show="!dash.loading && !homeItem.isConnected" style="cursor:pointer" ng-click="dash.checkingForControllerConnection()">
+								<p >{{dash.connectionLabel}}</p>
+								<img src="/assets/img/gps-disconnected-icon-27871.png" alt="logo" style="width:60px; height:60px;"/>
+							</div>
+							<!-- show if the item is connected -->
+							<div class="connectedStatus" ng-show="!dash.loading && homeItem.isConnected" style="cursor:pointer">
+								{{homeItem.itemData}}
+								<img ng-src="{{homeItem.itemImageSource}}" alt="logo" style="width:60px; height:60px; "/>
+							</div>
 						</div>
-						<div class= "disconnectedStatus" ng-show="!dash.loading" style="cursor:pointer" ng-click="dash.connectionLabel = 'Connecting...'">
-							<p >{{dash.connectionLabel}}</p>
-							<img src="/assets/img/gps-disconnected-icon-27871.png" alt="logo" style="width:60px; height:60px;"/>
-						</div>
 					</div>
 				</div>
+				<!-- end the col-md-4 -->
 			</div>
-
-
-			<div class="col-md-4">
-				<div id="card" >
-					<div id="header">Temperature</div>
-					<hr>
-					<div class="spinner" ng-show="dash.loading" >
-					  <div class="double-bounce1"></div>
-					  <div class="double-bounce2"></div>
-					</div>
-					<div class= "disconnectedStatus" ng-show="!dash.loading" >
-						<span style="font-size:50px; color: black">87 <img src="/assets/img/weather-icon.png" alt="logo" style="width:60px; height:60px;"/></span>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-4" >
-				<div id="card">
-					<div id="header">Alarm Status</div>
-					<hr>
-					<div class="spinner" ng-show="dash.loading" >
-					  <div class="double-bounce1"></div>
-					  <div class="double-bounce2"></div>
-					</div>
-					<div class= "disconnectedStatus" ng-show="!dash.loading" >
-						<p>Disconnected</p>
-						<img src="/assets/img/gps-disconnected-icon-27871.png" alt="logo" style="width:60px; height:60px;"/>
-					</div>
-				</div>
-			</div>
+			<!-- end the ng-repeat -->
 		</div>
+		<!-- end the col-md-12 -->
 	</div>
-
-	<div style="margin-left: 100px" ng-controller="DashboardController as dash">
-
-		<!--Controller Status Card -->
-		<div class="col-md-12 " ng-init="dash.timeOut()" >
-			<div class="col-md-4 " >
-				<div id="card" >
-					<div id="header">Lights</div>
-					<hr>
-					<div style="height:60%">
-						<div class="spinner" ng-show="dash.loading" >
-						  <div class="double-bounce1"></div>
-						  <div class="double-bounce2"></div>
-						</div>
-						<div class= "disconnectedStatus" ng-show="!dash.loading" >
-							<span style="font-size:50px; color: black">On<img src="/assets/img/light_icon.png" alt="logo" style="width:50px; height:50px;"/></span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-			<div class="col-md-4">
-				<div id="card" >
-					<div id="header">Shutters</div>
-					<hr>
-					<div class="spinner" ng-show="dash.loading" >
-					  <div class="double-bounce1"></div>
-					  <div class="double-bounce2"></div>
-					</div>
-					<div class= "disconnectedStatus" ng-show="!dash.loading" >
-						<p>Disconnected</p>
-						<img src="/assets/img/gps-disconnected-icon-27871.png" alt="logo" style="width:60px; height:60px;"/>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-4" >
-				<div id="card">
-					<div id="header">Dog Water</div>
-					<hr>
-					<div class="spinner" ng-show="dash.loading" >
-					  <div class="double-bounce1"></div>
-					  <div class="double-bounce2"></div>
-					</div>
-					<div class= "disconnectedStatus" ng-show="!dash.loading" >
-						<span style="font-size:50px; color: black">On<img src="/assets/img/water.png" alt="logo" style="width:40px; height:40px;"/></span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<!-- End of the Dashboard View-->
 </div>

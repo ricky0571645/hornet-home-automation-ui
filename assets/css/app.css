@@ -144,6 +144,13 @@ body, html {
     color: #c0392b;
 }
 
+.connectedStatus
+{
+    font-family: Roboto;
+    font-size:50px;
+    color: black;
+}
+
 /*-------SPINNER HTML------*/
 .spinner {
   width: 40px;
