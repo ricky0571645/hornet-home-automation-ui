@@ -19,7 +19,7 @@
 			<!-- Card to display the data for the main microcontroller(master) -->
 			<div  ng-repeat = "homeItem in dash.homeItemStack">
 				<div class="col-md-4" >
-					<div id="card" class="grow">
+					<div id="card" class="grow" style="cursor:pointer">
 						<div id="header">{{homeItem.itemTitle}}</div>
 						<hr>
 						<!-- items in the body of the card -->
@@ -29,12 +29,12 @@
 							  <div class="double-bounce2"></div>
 							</div>
 							<!-- show if the item is disconnected -->
-							<div class= "disconnectedStatus" ng-show="!dash.loading && !homeItem.isConnected" style="cursor:pointer" ng-click="dash.checkingForControllerConnection()">
+							<div class= "disconnectedStatus" ng-show="!dash.loading && !homeItem.isConnected"  ng-click="dash.checkingForControllerConnection()">
 								<p >{{dash.connectionLabel}}</p>
 								<img src="./assets/img/gps-disconnected-icon-27871.png" alt="logo" style="width:60px; height:60px;"/>
 							</div>
 							<!-- show if the item is connected -->
-							<div class="connectedStatus" ng-show="!dash.loading && homeItem.isConnected" style="cursor:pointer">
+							<div class="connectedStatus" ng-show="!dash.loading && homeItem.isConnected" >
 								{{homeItem.itemData}}
 								<img ng-src="{{homeItem.itemImageSource}}" alt="logo" style="width:60px; height:60px; "/>
 							</div>
