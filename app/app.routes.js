@@ -3,6 +3,7 @@ app.config(['$routeProvider',function($routeProvider) {
 		templateUrl: 'app/components/login/login.html'})
 	.when('/dashboard', {
 		templateUrl: 'app/components/dashboard/dashboard.html'
-	});
+	})
+	.otherwise({redirectTo:'/'});
 	
 }]);

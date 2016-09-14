@@ -17,11 +17,12 @@ function main($scope) {
 
     // Add any new cards here. Look at the model above to determine the format. 
     vm.homeItemStack.push(new homeItem("mainController", "Controller Status", " ", ' ', false));
-    vm.homeItemStack.push(new homeItem("temperature", "Temperature", 87, '/assets/img/weather-icon.png', true));
+    vm.homeItemStack.push(new homeItem("temperature", "Temperature", 87, './assets/img/weather-icon.png', true));
     vm.homeItemStack.push(new homeItem("alarm", "Alarm Status", " ", ' ', false));
-    vm.homeItemStack.push(new homeItem("lights", "Light Status", "On", '/assets/img/light_icon.png', true));
-    vm.homeItemStack.push(new homeItem("shutters", "Shutters", "On", '/assets/img/light_icon.png', false));
-    vm.homeItemStack.push(new homeItem("dogWater", "Dog Water", "On", '/assets/img/water.png', true));
+    vm.homeItemStack.push(new homeItem("lights", "Light Status", "On", './assets/img/light_icon.png', true));
+    vm.homeItemStack.push(new homeItem("shutters", "Shutters", "On", './assets/img/light_icon.png', false));
+    vm.homeItemStack.push(new homeItem("dogWater", "Dog Water Bowl", "Full", './assets/img/water.png', true));
+    
 
     //a manual timeout so that you can see the screen loading
     vm.timeOut =  function () {

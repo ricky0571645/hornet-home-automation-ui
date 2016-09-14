@@ -1,23 +1,25 @@
 <div >
 	<!-- Side Bar -->
 	<div id="sidebar" >
-		<br>
-		<img src="/assets/img/TeamIcon.png" alt="logo" />
-		<br> <br>
-		<p><a href="/#/" style="color:white">Logout</a></p>
-		<p>Settings</p>
-		<p>Report</p>
+		<div class="fade-in one">
+			<br>
+			<img src="./assets/img/TeamIcon.png" alt="logo" />
+			<br> <br>
+			<p><a href="#/" style="color:white">Logout</a></p>
+			<p>Settings</p>
+			<p>Report</p>
+		</div>
 	</div>
 
 	<!-- Actual Dashboard Cards and Data-->
-	<div style="margin-left: 100px" ng-controller="DashboardController as dash">
+	<div style="margin-left: 100px" ng-controller="DashboardController as dash"  class="fade-in two">
 
 		
 		<div class="col-md-12 " ng-init="dash.timeOut()">
 			<!-- Card to display the data for the main microcontroller(master) -->
 			<div  ng-repeat = "homeItem in dash.homeItemStack">
 				<div class="col-md-4" >
-					<div id="card">
+					<div id="card" class="grow">
 						<div id="header">{{homeItem.itemTitle}}</div>
 						<hr>
 						<!-- items in the body of the card -->
@@ -29,7 +31,7 @@
 							<!-- show if the item is disconnected -->
 							<div class= "disconnectedStatus" ng-show="!dash.loading && !homeItem.isConnected" style="cursor:pointer" ng-click="dash.checkingForControllerConnection()">
 								<p >{{dash.connectionLabel}}</p>
-								<img src="/assets/img/gps-disconnected-icon-27871.png" alt="logo" style="width:60px; height:60px;"/>
+								<img src="./assets/img/gps-disconnected-icon-27871.png" alt="logo" style="width:60px; height:60px;"/>
 							</div>
 							<!-- show if the item is connected -->
 							<div class="connectedStatus" ng-show="!dash.loading && homeItem.isConnected" style="cursor:pointer">
