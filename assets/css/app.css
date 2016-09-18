@@ -25,15 +25,22 @@ body, html {
         animation-iteration-count: 1;
 }
 
+.page{
+    position:absolute; 
+    text-align:center;
+    /*top:0;  */
+    width:100%; 
+    height: 100%;
+}
+
+/*----------------LOG IN PROPERTIES--------------------*/
 .page-login
 {
-
     background-image: url(../img/blurred-background-86.jpg);
     font-family: Montserrat;        
     text-align: center;
     color: white;
     height: 100%;
-
 }
 
 
@@ -65,6 +72,7 @@ body, html {
     /* Green */
     border: none;
     color: white;
+    border-radius: 5px;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -72,18 +80,7 @@ body, html {
     font-size: 16px;
 }
 
-@keyframes scaleUp {
-    from    { opacity: 0.3; -webkit-transform: scale(0.8); }
-}
-
-.page{
-    position:absolute; 
-    text-align:center;
-    /*top:0;  */
-    width:100%; 
-    height: 100%;
-}
-
+/*----------------SIDE BAR--------------------*/
 #sidebar {
     position:fixed;
     top:0; bottom:0; left:0;
@@ -91,41 +88,16 @@ body, html {
     background: #545454;
     color: white;
     font-size: 16px;
-
-
 }
-
-
-
-#dataSquare
-{
-    background-color: #e4e4e4;
-    /*width: 88%;*/
-    /*height: 85%;*/
-    color: black;
-    /*position: relative;*/
-
-
-    margin-left: 150px;
-    margin-top: 50px; 
-
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 5px;
-    border-right: transparent;
-    border-left: transparent;
-    border-top: transparent;
-    border-bottom-color: #006400;
-
-}
-
+/*----------------CARD PROPERTIES--------------------*/
 #card
 {
 
     background-color: white; 
     width: 70%;
-    height: 200px;
+    min-height:200px;
     padding-top: 20px;
+    color: black;
 
 
     margin-top: 40px;
@@ -164,7 +136,10 @@ body, html {
     color: black;
 }
 
-/*-------SPINNER HTML------*/
+@keyframes scaleUp {
+    from    { opacity: 0.3; -webkit-transform: scale(0.8); }
+}
+/*----------------SPINNER--------------------*/
 .spinner {
   width: 40px;
   height: 40px;
@@ -248,4 +223,22 @@ body, html {
   animation-delay: 1.6s;
 }
 
+/*----------------ABOUT PAGE PROPERTIES--------------------*/
 
+.aboutTitle{
+  font-family: Roboto;
+  font-size: 20pt;
+}
+
+.aboutParagraph{
+  font-family: Roboto;
+  font-size: 16pt;
+  padding-left: 15%;
+  padding-right: 15%;
+  text-align: left;
+}
+
+.contactTitle{
+  font-family: Roboto;
+  font-size: 30pt;
+}

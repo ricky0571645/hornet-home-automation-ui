@@ -5,16 +5,18 @@
 			<br>
 			<img src="./assets/img/TeamIcon.png" alt="logo" />
 			<br> <br>
+			<p><a href="#/dashboard" style="color:white">Dashboard</a></p>
+			<p><a href="#/about" style="color:white">About</a></p>
+			<p><a href="#/contact" style="color:white">Contact</a></p>
 			<p><a href="#/" style="color:white">Logout</a></p>
-			<p>Settings</p>
-			<p>Report</p>
+			
 		</div>
 	</div>
 
 	<!-- Actual Dashboard Cards and Data-->
 	<div style="margin-left: 100px" ng-controller="DashboardController as dash"  class="fade-in two">
 
-		
+		<h1 >Hornet Home Automation</h1>
 		<div class="col-md-12 " ng-init="dash.timeOut()">
 			<!-- Card to display the data for the main microcontroller(master) -->
 			<div  ng-repeat = "homeItem in dash.homeItemStack">
@@ -29,7 +31,7 @@
 							  <div class="double-bounce2"></div>
 							</div>
 							<!-- show if the item is disconnected -->
-							<div class= "disconnectedStatus" ng-show="!dash.loading && !homeItem.isConnected"  ng-click="dash.checkingForControllerConnection()">
+							<div class= "disconnectedStatus" ng-show="!dash.loading && !homeItem.isConnected"  ng-click="dash.sendGetRequest('http://192.168.1.233')">
 								<p >{{dash.connectionLabel}}</p>
 								<img src="./assets/img/gps-disconnected-icon-27871.png" alt="logo" style="width:60px; height:60px;"/>
 							</div>
