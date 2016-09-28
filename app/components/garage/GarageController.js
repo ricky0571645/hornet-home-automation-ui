@@ -4,6 +4,7 @@ function main($scope, $location, SharedDataService) {
     var vm = this;
     vm.videoIsLive = false;
     vm.videoIP = "";
+    vm.videoSource = "";
 
     var startLiveVideo = function(){
         videoIP = SharedDataService.getVideoIP();
@@ -11,6 +12,7 @@ function main($scope, $location, SharedDataService) {
             //check if you can connect to the IP
             //if so then set videoIsLive to true
             var theURL = 'http://' + videoIP;
+            vm.videoSource = "http://" + vm.videoIP + "/?action=stream"
 
         }
     }
