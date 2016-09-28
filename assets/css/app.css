@@ -3,6 +3,7 @@ body, html {
   height: 100%;
   background-image:url(../img/blurred-background-86.jpg);
 
+
 }
 
 .header h1 {
@@ -15,14 +16,6 @@ body, html {
         -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
         transform: scale(1.1);
-}
-
-.swing
-{
-        -webkit-animation: swing 1s ease;
-        animation: swing 1s ease;
-        -webkit-animation-iteration-count: 1;
-        animation-iteration-count: 1;
 }
 
 .page{
@@ -241,4 +234,48 @@ body, html {
 .contactTitle{
   font-family: Roboto;
   font-size: 30pt;
+}
+
+.aboutCard{
+  background-image:url(../img/poly.jpg); 
+  background-size:cover; 
+}
+/*----------------GARAGE PAGE PROPERTIES--------------------*/
+
+
+.videoBlock{
+  height: 400px;
+  width: 600px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-color: gray;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.up_down_buttons {
+    background-color: #545454;
+    /*font-family: 'Roboto';*/
+    /* Green */
+    margin: 10px;
+    border: none;
+    color: white;
+    /*border-radius: 10px;*/
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    /*font-weight: bold;*/
+}
+
+.border:hover
+{
+        box-shadow: inset 0 0 0 25px #3299CC;
+}
+
+.garageCard{
+  background-image:url(../img/bluepoly.jpg);
+  background-size:cover;  
+  color:white;
 }

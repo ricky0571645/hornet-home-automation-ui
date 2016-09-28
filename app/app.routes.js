@@ -10,6 +10,12 @@ app.config(['$routeProvider',function($routeProvider) {
 	.when('/contact', {
 		templateUrl: 'app/components/contact/contact.html'
 	})
+	.when('/garage', {
+		templateUrl: 'app/components/garage/garage.html'
+	})
+	.when('/settings', {
+		templateUrl: 'app/components/settings/settings.html'
+	})
 	.otherwise({redirectTo:'/'});
 	
 }]);

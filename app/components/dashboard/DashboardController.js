@@ -1,6 +1,6 @@
 app.controller("DashboardController", main);
 
-function main($scope) {
+function main($scope, $location) {
     var vm = this;
     vm.homeItemStack = [];
     vm.connectionLabel = "Disconnected";
@@ -17,11 +17,11 @@ function main($scope) {
 
     // Add any new cards here. Look at the model above to determine the format. 
     vm.homeItemStack.push(new homeItem("mainController", "Controller Status", " ", ' ', false));
-    vm.homeItemStack.push(new homeItem("temperature", "Temperature", 87, './assets/img/weather-icon.png', true));
-    vm.homeItemStack.push(new homeItem("alarm", "Alarm Status", " ", ' ', false));
-    vm.homeItemStack.push(new homeItem("lights", "Light Status", "On", './assets/img/light_icon.png', true));
+    vm.homeItemStack.push(new homeItem("webCam", "Web Camera", 87, './assets/img/weather-icon.png', false));
+    vm.homeItemStack.push(new homeItem("garage", "Garage Door Controller", "Active", './assets/img/garage.png', true));
+    vm.homeItemStack.push(new homeItem("infinityMirror", "Infinity Mirror", "On", './assets/img/light_icon.png', false));
     vm.homeItemStack.push(new homeItem("shutters", "Shutters", "On", './assets/img/light_icon.png', false));
-    vm.homeItemStack.push(new homeItem("dogWater", "Dog Water Bowl", "Full", './assets/img/water.png', true));
+    vm.homeItemStack.push(new homeItem("dogWater", "Dog Water Bowl", "Full", './assets/img/water.png', false));
     
 
     //a manual timeout so that you can see the screen loading
@@ -49,9 +49,11 @@ function main($scope) {
 
      vm.sendGetRequest = function(theURL)
      {
-        getRequest(theURL, function(response){
-            console.log(response);
-        });
+        //do nothing for now but uncomment when you do want to do something
+
+        // getRequest(theURL, function(response){
+        //     console.log(response);
+        // });
      }
 
     var getRequest = function (theUrl, callback){
@@ -63,5 +65,11 @@ function main($scope) {
         }
         xmlHttp.open("GET", theUrl+"?"+params, true); // true for asynchronous 
         xmlHttp.send(null);
+    }
+
+    vm.processCardAction = function (item){
+        if(item.itemName == "garage"){
+            $location.path("/garage");
+        }
     }
 }

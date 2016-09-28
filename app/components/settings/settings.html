@@ -1,0 +1,49 @@
+<div >
+    <!-- Side Bar -->
+    <div id="sidebar" >
+        <div >
+            <br>
+            <img src="./assets/img/TeamIcon.png" alt="logo" />
+            <br> <br>
+            <p><a href="#/dashboard" style="color:white">Dashboard</a></p>
+            <p><a href="#/settings" style="color:white">Settings</a></p>
+            <p><a href="#/about" style="color:white">About</a></p>
+            <p><a href="#/contact" style="color:white">Contact</a></p>
+            <p><a href="#/" style="color:white">Logout</a></p>
+            
+        </div>
+    </div>
+
+    <!-- Settings for Arduino Connections-->
+    <div style="margin-left: 100px" class="fade-in one" ng-controller="SettingsController as settings">
+        
+        <div class="col-md-12 " >
+            <div id="card" style="width:90%" class="aboutCard">
+                <h1>Hornet Home Automation</h1>
+                <h1 class="aboutTitle">Settings</h1>
+                <hr>
+                <p class="aboutParagraph" style="text-align: center">
+                    Garage Controller Arduino Server IP:  
+                </p>
+                <input name="searchbox" onfocus="if (this.value=='0') this.value = ''" type="text" value={{settings.garageServerIP}} class="login_textBox" ng-model="settings.garageServerIP">
+                <!-- Another server -->
+                <!-- <br><br>
+                <p class="aboutParagraph" style="text-align: center">
+                    Dog Bowl Controller Arduino Server IP  
+                </p>
+                <input name="searchbox" onfocus="if (this.value=='username') this.value = ''" type="text" value={{settings.userName}} class="login_textBox"> -->
+
+                <br><br>
+                <p class="aboutParagraph" style="text-align: center">
+                    Video Stream URL:  
+                </p>
+                <input name="searchbox" onfocus="if (this.value=='0') this.value = ''" type="text" value={{settings.videoIP}} class="login_textBox" ng-model="settings.videoIP">
+                <br><br><br>
+                <button type="button" class="login_button" ng-click="settings.updateIPValues()">Save</button>
+                <br><br>
+            </div>
+        </div>
+        <!-- end the col-md-12 -->
+    </div>
+    <!-- End of the Dashboard View-->
+</div>
