@@ -15,26 +15,24 @@
     </div>
 
     <!-- Actual Dashboard Cards and Data-->
-    <div style="margin-left: 100px" class="fade-in one" ng-controller="GarageController as garage">
+    <div style="margin-left: 100px" class="fade-in one" ng-controller="WebCamController as cam">
 
         
         <div class="col-md-12 " >
             <div id="card" style="width:80%" class="videoBackgroundCard">
                 <div style="color: white">
                     <h1>Hornet Home Automation</h1>
-                    <h3>Garage Door Controller</h3>
+                    <h3>Web Camera</h3>
                 </div>
                 <hr style="border-top: 1px solid #ccc;"> 
-                <div class="videoBlock" ng-if="!garage.videoIsLive">
-                    <img class="video-image" style="-webkit-user-select: none;" src="http://192.168.1.124:8081/" width="600" height="400">
-                    <!-- <img src= "http://192.168.15.22:8081/?action=stream" width="600" height="400"/> -->
+                <div class="videoBlock" ng-if="!cam.videoIsLive">
+                    <!-- <img class="video-image" style="-webkit-user-select: none;" src="http://192.168.1.124:8081/" width="600" height="400"> -->
                 </div>
-                <div ng-if="garage.videoIsLive">
-                    <img ng-src= "{{garage.videoSource}}" width="600" height="400"/>
+                <div ng-if="cam.videoIsLive">
+                    <img ng-src= "{{cam.videoSource}}" width="600" height="400"/>
                 </div>
                 <div>
-                    <button type="button" class="up_down_buttons border" ng-click="garage.toggleGarageDoor(true)">Open</button>
-                    <button type="button" class="up_down_buttons border" ng-click="garage.toggleGarageDoor(false)">Close</button>
+                    <button type="button" class="up_down_buttons border" ng-click="cam.turnVideoFeedOn()">Turn Video On</button>
                 </div>
             </div>
         </div>

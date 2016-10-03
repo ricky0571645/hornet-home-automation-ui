@@ -13,6 +13,9 @@ app.config(['$routeProvider',function($routeProvider) {
 	.when('/garage', {
 		templateUrl: 'app/components/garage/garage.html'
 	})
+	.when('/webCam', {
+		templateUrl: 'app/components/webCam/webCam.html'
+	})
 	.when('/settings', {
 		templateUrl: 'app/components/settings/settings.html'
 	})
