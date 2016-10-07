@@ -2,16 +2,19 @@ app.controller("GarageController", main);
 
 function main($scope, $location, SharedDataService) {
     var vm = this;
-    vm.videoIsLive = false;
-    vm.videoIP = "";
-    vm.videoSource = "";
 
-    var startLiveVideo = function(){
-        vm.videoIP = SharedDataService.getVideoIP();
-        if(getVideoIP != 0){
-            //check if you can connect to the IP
-            //if so then set videoIsLive to true
-            vm.videoIP = 'http://' + vm.videoIP;
+    vm.garageDoorStatus = "Unknown";
+
+    vm.videoIsLive = false;
+
+    // REMEMBER TO CHANGE THIS DATA ONCE VIDEO CHANGES
+    vm.webCamIP = SharedDataService.getFormattedWebCamIP();
+
+    vm.turnVideoFeedOn = function(){
+        if(vm.webCamIP != 0){
+            // vm.WebCamIP = "https://" + vm.WebCamIP;
+            console.log(vm.webCamIP);
+            vm.videoIsLive = true;
         }
     }
 

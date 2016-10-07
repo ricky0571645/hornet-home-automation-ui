@@ -5,13 +5,12 @@ function main($scope, $location, SharedDataService) {
     var vm = this;
 
     vm.videoIsLive = false;
-    vm.videoIP = "";
+    vm.webCamIP = SharedDataService.getFormattedWebCamIP();
 
     vm.turnVideoFeedOn = function(){
-        vm.videoIP = SharedDataService.getVideoIP();
-        if(vm.videoIP != 0){
-            vm.videoIP = "http://" + vm.videoIP;
-            console.log(vm.videoIP);
+        if(vm.webCamIP != 0){
+            // vm.WebCamIP = "https://" + vm.WebCamIP;
+            console.log(vm.webCamIP);
             vm.videoIsLive = true;
         }
     }

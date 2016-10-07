@@ -1,28 +1,38 @@
 app.service('SharedDataService', function () {
+	//initialize variables
 	var garageServerIP = 0;
-	var videoIP = 0;
+	var webCamIP = 0;
 
+	//------------GARAGE WEB SERVER----------
 	var setGarageIP = function(newGarageIP){
 		garageServerIP = newGarageIP;
 	}
 
-	var setVideoIP = function(newVideoIP){
-		videoIP = newVideoIP;
+	var getGarageServerIP = function(){
+    	return garageServerIP;
+	};
+
+	//------------WEB CAMERA----------
+	var setWebCamIP = function(newWebCamIP){
+		webCamIP = newWebCamIP;
 	}
 
-
-    var getGarageServerIP = function(){
-      return garageServerIP;
+	var getWebCamIP = function(){
+    	return webCamIP;
 	};
 
-	var getVideoIP = function(){
-      return videoIP;
+	var getFormattedWebCamIP = function(){
+		var formattedWebIP = "http://" + webCamIP;
+    	return formattedWebIP;
 	};
+
+	//-----------END--------------
 
 	return {
-	setGarageIP: 		setGarageIP,
-	setVideoIP: 		setVideoIP,
-	getGarageServerIP: 	getGarageServerIP,
-	getVideoIP: 		getVideoIP
+	setGarageIP: 			setGarageIP,
+	setWebCamIP: 			setWebCamIP,
+	getGarageServerIP: 		getGarageServerIP,
+	getWebCamIP: 			getWebCamIP,
+	getFormattedWebCamIP: 	getFormattedWebCamIP
 	};
 });

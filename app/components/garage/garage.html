@@ -1,3 +1,6 @@
+<!-- ************************************************ -->
+<!-- ################## GARAGE ################## -->
+<!-- ************************************************ -->
 <div >
     <!-- Side Bar -->
     <div id="sidebar" >
@@ -14,7 +17,7 @@
         </div>
     </div>
 
-    <!-- Actual Dashboard Cards and Data-->
+    <!-- Garage video and controls-->
     <div style="margin-left: 100px" class="fade-in one" ng-controller="GarageController as garage">
 
         
@@ -25,12 +28,12 @@
                     <h3>Garage Door Controller</h3>
                 </div>
                 <hr style="border-top: 1px solid #ccc;"> 
+                <h4>Garage Door Status: {{garage.garageDoorStatus}}</h4>
                 <div class="videoBlock" ng-if="!garage.videoIsLive">
-                    <img class="video-image" style="-webkit-user-select: none;" src="http://192.168.1.124:8081/" width="600" height="400">
-                    <!-- <img src= "http://192.168.15.22:8081/?action=stream" width="600" height="400"/> -->
+                    <!-- Show nothing if no IP given -->
                 </div>
                 <div ng-if="garage.videoIsLive">
-                    <img ng-src= "{{garage.videoSource}}" width="600" height="400"/>
+                    <img ng-src= "{{garage.webCamIP}}" width="600" height="400"/>
                 </div>
                 <div>
                     <button type="button" class="up_down_buttons border" ng-click="garage.toggleGarageDoor(true)">Open</button>

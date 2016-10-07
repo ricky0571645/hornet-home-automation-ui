@@ -1,3 +1,6 @@
+<!-- ************************************************ -->
+<!-- ################## WEB CAMERA ################## -->
+<!-- ************************************************ -->
 <div >
     <!-- Side Bar -->
     <div id="sidebar" >
@@ -14,7 +17,7 @@
         </div>
     </div>
 
-    <!-- Actual Dashboard Cards and Data-->
+    <!-- Web Camera-->
     <div style="margin-left: 100px" class="fade-in one" ng-controller="WebCamController as cam">
 
         
@@ -26,10 +29,11 @@
                 </div>
                 <hr style="border-top: 1px solid #ccc;"> 
                 <div class="videoBlock" ng-if="!cam.videoIsLive">
-                    <!-- <img class="video-image" style="-webkit-user-select: none;" src="http://192.168.1.124:8081/" width="600" height="400"> -->
+                    <!-- Show a gray block if there is no video playing -->
                 </div>
                 <div ng-if="cam.videoIsLive">
-                    <img ng-src= "{{cam.videoSource}}" width="600" height="400"/>
+                    <img class="video-image" style="-webkit-user-select: none;" ng-src="{{cam.webCamIP}}" width="600" height="400">
+                    <!-- Attempt to connect to the video stream -->
                 </div>
                 <div>
                     <button type="button" class="up_down_buttons border" ng-click="cam.turnVideoFeedOn()">Turn Video On</button>
