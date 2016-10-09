@@ -19,7 +19,6 @@
 
     <!-- Web Camera-->
     <div style="margin-left: 100px" class="fade-in one" ng-controller="WebCamController as cam">
-
         
         <div class="col-md-12 " >
             <div id="card" style="width:80%" class="videoBackgroundCard">
@@ -32,8 +31,8 @@
                     <!-- Show a gray block if there is no video playing -->
                 </div>
                 <div ng-if="cam.videoIsLive">
-                    <img class="video-image" style="-webkit-user-select: none;" ng-src="{{cam.webCamIP}}" width="600" height="400">
                     <!-- Attempt to connect to the video stream -->
+                    <img class="video-image" style="-webkit-user-select: none;" ng-src="{{cam.webCamIP}}" width="600" height="400">
                 </div>
                 <div>
                     <button type="button" class="up_down_buttons border" ng-click="cam.turnVideoFeedOn()">Turn Video On</button>

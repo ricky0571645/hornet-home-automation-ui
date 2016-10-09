@@ -1,4 +1,4 @@
-app.service('SharedDataService', function () {
+app.service('AddressValueService', function () {
 	//initialize variables
 	var garageServerIP = 0;
 	var webCamIP = 0;
