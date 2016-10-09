@@ -16,34 +16,42 @@
             
         </div>
     </div>
-
     <!-- Settings for Arduino Connections-->
-    <div style="margin-left: 100px" class="fade-in one" ng-controller="SettingsController as settings">
+
+    <div style="margin-left: 100px;" class="fade-in one" ng-controller="SettingsController as settings">
         
         <div class="col-md-12 " >
-            <div id="card" style="width:90%" class="aboutCard">
-                <h1>Hornet Home Automation</h1>
-                <h1 class="aboutTitle">Settings</h1>
-                <hr>
-                <p class="aboutParagraph" style="text-align: center">
-                    Garage Door Controller Arduino Server IP:  
-                </p>
-                <input name="searchbox" onfocus="if (this.value=='0') this.value = ''" type="text" value={{settings.garageServerIP}} class="login_textBox" ng-model="settings.garageServerIP">
-                <!-- Another server -->
-                <!-- <br><br>
-                <p class="aboutParagraph" style="text-align: center">
-                    Dog Bowl Controller Arduino Server IP  
-                </p>
-                <input name="searchbox" onfocus="if (this.value=='username') this.value = ''" type="text" value={{settings.userName}} class="login_textBox"> -->
+            <div id="card" style="width:90%; " class="aboutCard" >
+                <h1 style="color: #2c3e50">Hornet Home Automation</h1>
+                <h1 class="aboutTitle" style="color: #34495e">Settings</h1>
+                <!-- <hr style="border-color: gray; border-width: 2px; margin-bottom: 0px; "> -->
 
-                <br><br>
-                <p class="aboutParagraph" style="text-align: center">
-                    Video Stream IP and Port:  
-                </p>
-                <input name="searchbox" onfocus="if (this.value=='0') this.value = ''" type="text" value={{settings.webCamIP}} class="login_textBox" ng-model="settings.webCamIP">
-                <br><br><br>
-                <button type="button" class="login_button" ng-click="settings.updateIPValues()">Save</button>
-                <br><br>
+                <div class="col-md-4 addressCards">
+                    <img src="./assets/img/arduino.png" alt="logo" style="width:80px; height:60px; margin-top: 35px;"/>
+                    <p class="aboutParagraph" style="text-align: center; color: #2e2e2e">
+                        Garage Door Controller Arduino Server IP:  
+                    </p>
+                    <input name="searchbox" onfocus="if (this.value=='0') this.value = ''" type="text" value={{settings.garageServerIP}} class="login_textBox" ng-model="settings.garageServerIP">
+                </div>
+
+                <div class="col-md-4 addressCards" style="background-color: #2980b9">
+                    <img src="./assets/img/webcam.png" alt="logo" style="width:60px; height:60px; margin-top: 35px;"/>
+                    <p class="aboutParagraph" style="text-align: center">
+                        Garage Door Video Stream IP and Port:  
+                    </p>
+                    <input name="searchbox" onfocus="if (this.value=='0') this.value = ''" type="text" value={{settings.garageVideoIP}} class="login_textBox" ng-model="settings.garageVideoIP">
+                </div>
+
+                <div class="col-md-4 addressCards" style="background-color: #34495e">
+                    <img src="./assets/img/webcam.png" alt="logo" style="width:60px; height:60px; margin-top: 35px;"/>
+                    <p class="aboutParagraph" style="text-align: center">
+                        Web Camera Video Stream IP and Port:  
+                    </p>
+                    <input name="searchbox" onfocus="if (this.value=='0') this.value = ''" type="text" value={{settings.webCamIP}} class="login_textBox" ng-model="settings.webCamIP">
+                </div>
+
+                <button style="margin-top: 20px; margin-bottom: 30px" type="button" class="login_button" ng-click="settings.updateIPValues() ">Save</button>
+
             </div>
         </div>
         <!-- end the col-md-12 -->

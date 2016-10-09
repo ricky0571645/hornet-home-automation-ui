@@ -21,21 +21,23 @@
     <div style="margin-left: 100px" class="fade-in one" ng-controller="WebCamController as cam">
         
         <div class="col-md-12 " >
-            <div id="card" style="width:80%" class="videoBackgroundCard">
+            <div id="card" style="width:80%; background-color: #16a085; background-image: none" class="videoBackgroundCard">
                 <div style="color: white">
                     <h1>Hornet Home Automation</h1>
                     <h3>Web Camera</h3>
                 </div>
-                <hr style="border-top: 1px solid #ccc;"> 
-                <div class="videoBlock" ng-if="!cam.videoIsLive">
-                    <!-- Show a gray block if there is no video playing -->
-                </div>
-                <div ng-if="cam.videoIsLive">
-                    <!-- Attempt to connect to the video stream -->
-                    <img class="video-image" style="-webkit-user-select: none;" ng-src="{{cam.webCamIP}}" width="600" height="400">
-                </div>
-                <div>
-                    <button type="button" class="up_down_buttons border" ng-click="cam.turnVideoFeedOn()">Turn Video On</button>
+                <div style="background-color: #ecf0f1">
+                    <br>
+                    <div class="videoBlock" ng-if="!cam.videoIsLive">
+                        <!-- Show a gray block if there is no video playing -->
+                    </div>
+                    <div ng-if="cam.videoIsLive">
+                        <!-- Attempt to connect to the video stream -->
+                        <img class="video-image" style="-webkit-user-select: none; margin-bottom: 20px" ng-src="{{cam.webCamIP}}" width="600" height="400">
+                    </div>
+                    <div>
+                        <button type="button" class="up_down_buttons border" ng-click="cam.turnVideoFeedOn()">{{cam.buttonText}}</button>
+                    </div>
                 </div>
             </div>
         </div>

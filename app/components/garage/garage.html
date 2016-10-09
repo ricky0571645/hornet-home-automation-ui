@@ -22,22 +22,26 @@
 
         
         <div class="col-md-12 " >
-            <div id="card" style="width:80%" class="videoBackgroundCard">
+            <div id="card" style="width:80%; background-color: #34495e; background-image: none" class="videoBackgroundCard">
                 <div style="color: white">
                     <h1>Hornet Home Automation</h1>
                     <h3>Garage Door Controller</h3>
+                    <!-- <hr style="border-top: 5px solid #ccc;">  -->
                 </div>
-                <hr style="border-top: 1px solid #ccc;"> 
-                <h4>Garage Door Status: {{garage.garageDoorStatus}}</h4>
-                <div class="videoBlock" ng-if="!garage.videoIsLive">
-                    <!-- Show nothing if no IP given -->
-                </div>
-                <div ng-if="garage.videoIsLive">
-                    <img ng-src= "{{garage.webCamIP}}" width="600" height="400"/>
-                </div>
-                <div>
-                    <button type="button" class="up_down_buttons border" ng-click="garage.toggleGarageDoor(true)">Open</button>
-                    <button type="button" class="up_down_buttons border" ng-click="garage.toggleGarageDoor(false)">Close</button>
+                <div style="background-color: #ecf0f1;">
+                    <br>
+                    <h4 style="margin-bottom: 20px">Garage Door Status: {{garage.garageDoorStatus}}</h4>
+                    <!-- <div class="videoBlock" ng-if="!garage.videoIsLive"> -->
+                        <!-- Show nothing if no IP given -->
+                    <!-- </div> -->
+                    <!-- <div ng-if="garage.videoIsLive"> -->
+                    <div>
+                        <img ng-src= "{{garage.garageVideoIP}}" width="600" height="400" style="margin-bottom: 20px"/>
+                    </div>
+                    <div>
+                        <button type="button" class="up_down_buttons border" ng-click="garage.toggleGarageDoor(true)">Open</button>
+                        <button type="button" class="up_down_buttons border" ng-click="garage.toggleGarageDoor(false)">Close</button>
+                    </div>
                 </div>
             </div>
         </div>

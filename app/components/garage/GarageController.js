@@ -1,6 +1,6 @@
 app.controller("GarageController", main);
 
-function main($scope, $location, SharedDataService) {
+function main($scope, $location, AddressValueService) {
     var vm = this;
 
     vm.garageDoorStatus = "Unknown";
@@ -8,7 +8,7 @@ function main($scope, $location, SharedDataService) {
     vm.videoIsLive = false;
 
     // REMEMBER TO CHANGE THIS DATA ONCE VIDEO CHANGES
-    vm.webCamIP = SharedDataService.getFormattedWebCamIP();
+    vm.garageVideoIP = AddressValueService.getFormattedGarageVideoIP();
 
     vm.turnVideoFeedOn = function(){
         if(vm.webCamIP != 0){
@@ -20,8 +20,7 @@ function main($scope, $location, SharedDataService) {
 
     vm.toggleGarageDoor = function(isOpen)
      {
-
-        var garageServerIP = SharedDataService.getGarageServerIP();
+        var garageServerIP = AddressValueService.getGarageServerIP();
         if(garageServerIP != '0'){
             var theURL = 'http://' + garageServerIP;
             // condition if the button is open or close
@@ -50,8 +49,5 @@ function main($scope, $location, SharedDataService) {
         xmlHttp.open("GET", theUrl+"?"+params, true); // true for asynchronous 
         xmlHttp.send(null);
     }
-
-
-
 }
 

@@ -60,17 +60,17 @@ body, html {
 }
 
 .login_button {
-    background-color: #008CBA;
+    background-color: #2980b9;
     font-family: 'Roboto';
     /* Green */
     border: none;
     color: white;
     border-radius: 5px;
-    padding: 15px 32px;
+    padding: 10px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 /*----------------SIDE BAR--------------------*/
@@ -224,10 +224,10 @@ body, html {
 }
 
 .aboutParagraph{
-  font-family: Roboto;
+  font-family: Calibri Light;
   font-size: 16pt;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 25%;
+  padding-right: 25%;
   text-align: left;
 }
 
@@ -237,8 +237,10 @@ body, html {
 }
 
 .aboutCard{
-  background-image:url(../img/poly.jpg); 
-  background-size:cover; 
+  /*background-image:url(../img/poly.jpg); 
+  background-size:cover; */
+  background-color: #34495e;
+  overflow: auto;
 }
 
 /*----------------VIDEO PROPERTIES--------------------*/
@@ -280,4 +282,21 @@ body, html {
   background-image:url(../img/bluepoly.jpg);
   background-size:cover;  
   color:white;
+}
+/*----------------SETTINGS PAGE PROPERTIES--------------------*/
+
+.addressCards{
+  /*margin-top: 20px; */
+  margin-bottom: 30px; 
+  height: 300px; 
+  background-color: #ecf0f1;
+  color:white;
+
+/*  border-left-color: gray; 
+  border-left-style: dashed; 
+  border-left-width: 3px;
+
+  border-bottom-color: gray; 
+  border-bottom-style: dashed; 
+  border-bottom-width: 3px;*/
 }

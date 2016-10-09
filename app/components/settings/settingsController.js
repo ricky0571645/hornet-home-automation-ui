@@ -4,7 +4,9 @@ function main($scope, $location, AddressValueService) {
     var vm = this;
     // filler variables
     vm.garageServerIP = AddressValueService.getGarageServerIP();
+    vm.garageVideoIP = AddressValueService.getGarageVideoIP();
     vm.webCamIP = AddressValueService.getWebCamIP();
+
 
     // Changes the page to the dashboard page if the data entered is correct
     vm.updateIPValues = function()

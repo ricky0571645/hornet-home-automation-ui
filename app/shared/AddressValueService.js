@@ -1,6 +1,7 @@
 app.service('AddressValueService', function () {
 	//initialize variables
 	var garageServerIP = 0;
+	var garageVideoIP = 0;
 	var webCamIP = 0;
 
 	//------------GARAGE WEB SERVER----------
@@ -12,6 +13,19 @@ app.service('AddressValueService', function () {
     	return garageServerIP;
 	};
 
+	//------------GARAGE VIDEO CAMERA----------
+	var setGarageVideoIP = function(newGarageVideoIP){
+		garageVideoIP = newWebCamIP;
+	}
+
+	var getGarageVideoIP = function(){
+    	return garageVideoIP;
+	};
+
+	var getFormattedGarageVideoIP = function(){
+		var formattedGarageVideoIP = "http://" + garageVideoIP;
+    	return formattedGarageVideoIP;
+	};
 	//------------WEB CAMERA----------
 	var setWebCamIP = function(newWebCamIP){
 		webCamIP = newWebCamIP;
@@ -31,8 +45,12 @@ app.service('AddressValueService', function () {
 	return {
 	setGarageIP: 			setGarageIP,
 	setWebCamIP: 			setWebCamIP,
+	getGarageVideoIP: 		getGarageVideoIP,
+	setGarageVideoIP: 		setGarageVideoIP,
 	getGarageServerIP: 		getGarageServerIP,
 	getWebCamIP: 			getWebCamIP,
-	getFormattedWebCamIP: 	getFormattedWebCamIP
+	getFormattedWebCamIP: 	getFormattedWebCamIP,
+
+	getFormattedGarageVideoIP: 			getFormattedGarageVideoIP
 	};
 });

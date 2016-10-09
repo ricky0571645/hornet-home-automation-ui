@@ -17,7 +17,7 @@ function main($scope, $location) {
 
     // Add any new cards here. Look at the model above to determine the format. 
     vm.homeItemStack.push(new homeItem("mainController", "Controller Status", " ", ' ', false));
-    vm.homeItemStack.push(new homeItem("webCam", "Web Camera", "Active", './assets/img/icon-camera-128.png', true));
+    vm.homeItemStack.push(new homeItem("webCam", "Web Camera", "Active", './assets/img/webcam-icon.png', true));
     vm.homeItemStack.push(new homeItem("garage", "Garage Door Controller", "Active", './assets/img/garage.png', true));
     vm.homeItemStack.push(new homeItem("infinityMirror", "Infinity Mirror", "On", './assets/img/light_icon.png', false));
     vm.homeItemStack.push(new homeItem("shutters", "Shutters", "On", './assets/img/light_icon.png', false));
