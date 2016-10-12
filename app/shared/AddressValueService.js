@@ -3,6 +3,7 @@ app.service('AddressValueService', function () {
 	var garageServerIP = 0;
 	var garageVideoIP = 0;
 	var webCamIP = 0;
+	var smartMirrorURL = "https://www.google.com";
 
 	//------------GARAGE WEB SERVER----------
 	var setGarageIP = function(newGarageIP){
@@ -15,7 +16,7 @@ app.service('AddressValueService', function () {
 
 	//------------GARAGE VIDEO CAMERA----------
 	var setGarageVideoIP = function(newGarageVideoIP){
-		garageVideoIP = newWebCamIP;
+		garageVideoIP = newGarageVideoIP;
 	}
 
 	var getGarageVideoIP = function(){
@@ -40,6 +41,15 @@ app.service('AddressValueService', function () {
     	return formattedWebIP;
 	};
 
+	//------------SMART MIRROR URL----------
+	var setSmartMirrorURL = function(newSmartMirrorURL){
+		smartMirrorURL = newSmartMirrorURL;
+	}
+
+	var getSmartMirrorURL = function(){
+    	return smartMirrorURL;
+	};
+
 	//-----------END--------------
 
 	return {
@@ -50,6 +60,8 @@ app.service('AddressValueService', function () {
 	getGarageServerIP: 		getGarageServerIP,
 	getWebCamIP: 			getWebCamIP,
 	getFormattedWebCamIP: 	getFormattedWebCamIP,
+	setSmartMirrorURL: 		setSmartMirrorURL,
+	getSmartMirrorURL: 		getSmartMirrorURL,
 
 	getFormattedGarageVideoIP: 			getFormattedGarageVideoIP
 	};

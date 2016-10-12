@@ -1,6 +1,6 @@
 app.controller("DashboardController", main);
 
-function main($scope, $location) {
+function main($scope, $location, AddressValueService) {
     var vm = this;
     vm.homeItemStack = [];
     vm.connectionLabel = "Disconnected";
@@ -16,7 +16,7 @@ function main($scope, $location) {
     }
 
     // Add any new cards here. Look at the model above to determine the format. 
-    vm.homeItemStack.push(new homeItem("mainController", "Controller Status", " ", ' ', false));
+    vm.homeItemStack.push(new homeItem("smartMirror", "Smart Mirror", "Active", './assets/img/mirror.png', true));
     vm.homeItemStack.push(new homeItem("webCam", "Web Camera", "Active", './assets/img/webcam-icon.png', true));
     vm.homeItemStack.push(new homeItem("garage", "Garage Door Controller", "Active", './assets/img/garage.png', true));
     vm.homeItemStack.push(new homeItem("infinityMirror", "Infinity Mirror", "On", './assets/img/light_icon.png', false));
@@ -73,6 +73,12 @@ function main($scope, $location) {
         }
         if(item.itemName == "webCam"){
             $location.path("/webCam");
+        }
+        if(item.itemName == "smartMirror"){
+            var smartMirrorURL = AddressValueService.getSmartMirrorURL();
+            console.log(smartMirrorURL);
+            window.open(smartMirrorURL, '_blank');
+            window.focus();
         }
     }
 }
