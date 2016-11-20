@@ -4,12 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+        <meta charset="UTF-8">
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
                 $('#zero').click(function(){
                     var a = new HMLHttpRequest();
-                    a.open("GET","http://192.168.1.124/zero.php");
+                    a.open("GET","10.113.47.155/zero.php");
                     a.onreadystatechange=function(){
                         if(a.readyState==4){
                             if(a.status ==200){
@@ -22,7 +23,7 @@
                 });
                 $('#fourfive').click(function(){
                     var a = new HMLHttpRequest();
-                    a.open("GET","http://192.168.1.124/fourfive.php");
+                    a.open("GET","10.113.47.155/fourfive.php");
                     a.onreadystatechange=function(){
                         if(a.readyState==4){
                             if(a.status ==200){
@@ -35,7 +36,7 @@
                 });
                 $('#ninezero').click(function(){
                     var a = new HMLHttpRequest();
-                    a.open("GET","http://192.168.1.124/ninezero.php");
+                    a.open("GET","10.113.47.155/ninezero.php");
                     a.onreadystatechange=function(){
                         if(a.readyState==4){
                             if(a.status ==200){
@@ -48,7 +49,7 @@
                 });
                 $('#onethreefive').click(function(){
                     var a = new HMLHttpRequest();
-                    a.open("GET","http://192.168.1.124/onethreefive.php");
+                    a.open("GET","10.113.47.155/onethreefive.php");
                     a.onreadystatechange=function(){
                         if(a.readyState==4){
                             if(a.status ==200){
@@ -61,7 +62,7 @@
                 });
                 $('#oneeighty').click(function(){
                     var a = new HMLHttpRequest();
-                    a.open("GET","http://192.168.1.124/oneeighty.php");
+                    a.open("GET","10.113.47.155/oneeighty.php");
                     a.onreadystatechange=function(){
                         if(a.readyState==4){
                             if(a.status ==200){
