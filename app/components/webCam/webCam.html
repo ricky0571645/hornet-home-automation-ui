@@ -3,80 +3,7 @@
 <!-- ************************************************ -->
 <!DOCTYPE html>
 <html>
-<head>
-        <meta charset="UTF-8">
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $('#zero').click(function(){
-                    var a = new HMLHttpRequest();
-                    a.open("GET","10.113.47.155/zero.php");
-                    a.onreadystatechange=function(){
-                        if(a.readyState==4){
-                            if(a.status ==200){
 
-                            }
-                            else alert("HTTP ERROR");
-                        }
-                    }
-                    a.send();
-                });
-                $('#fourfive').click(function(){
-                    var a = new HMLHttpRequest();
-                    a.open("GET","10.113.47.155/fourfive.php");
-                    a.onreadystatechange=function(){
-                        if(a.readyState==4){
-                            if(a.status ==200){
-
-                            }
-                            else alert("HTTP ERROR");
-                        }
-                    }
-                    a.send();
-                });
-                $('#ninezero').click(function(){
-                    var a = new HMLHttpRequest();
-                    a.open("GET","10.113.47.155/ninezero.php");
-                    a.onreadystatechange=function(){
-                        if(a.readyState==4){
-                            if(a.status ==200){
-
-                            }
-                            else alert("HTTP ERROR");
-                        }
-                    }
-                    a.send();
-                });
-                $('#onethreefive').click(function(){
-                    var a = new HMLHttpRequest();
-                    a.open("GET","10.113.47.155/onethreefive.php");
-                    a.onreadystatechange=function(){
-                        if(a.readyState==4){
-                            if(a.status ==200){
-
-                            }
-                            else alert("HTTP ERROR");
-                        }
-                    }
-                    a.send();
-                });
-                $('#oneeighty').click(function(){
-                    var a = new HMLHttpRequest();
-                    a.open("GET","10.113.47.155/oneeighty.php");
-                    a.onreadystatechange=function(){
-                        if(a.readyState==4){
-                            if(a.status ==200){
-
-                            }
-                            else alert("HTTP ERROR");
-                        }
-                    }
-                    a.send();
-                });
-            });
-
-        </script>
-</head>
 
 <div >
     <!-- Side Bar -->
@@ -102,14 +29,6 @@
                 <div style="color: white">
                     <h1>Hornet Home Automation</h1>
                     <h3>Web Camera and Controller</h3>
-                    <body onload="process()">
-                    Enter the angle you would like to look at: <br>
-                    <button type="button" id="zero" style="color:black">0 degrees</button>
-                    <button type="button" id="fourfive" style="color:black">45 degrees</button>
-                    <button type="button" id="ninezero" style="color:black">90 degrees</button>
-                    <button type="button" id="onethreefive" style="color:black">135 degrees</button>
-                    <button type="button" id="oneeighty" style="color:black">180 degrees</button>
-                    </body>
                 </div>
                 <div style="background-color: #ecf0f1">
                     <br>
@@ -123,6 +42,15 @@
                     <div>
                         <button type="button" class="up_down_buttons border" ng-click="cam.turnVideoFeedOn()">{{cam.buttonText}}</button>
                     </div>
+                    <!-- we want to change this for the buttons-->
+                    <div>
+                        <button type="button" class="up_down_buttons border" ng-click="cam.toggleServo(0)">0 degrees</button>
+                        <button type="button" class="up_down_buttons border" ng-click="cam.toggleServo(45)">45 degrees</button>
+                        <button type="button" class="up_down_buttons border" ng-click="cam.toggleServo(90)">90 degrees</button>
+                        <button type="button" class="up_down_buttons border" ng-click="cam.toggleServo(135)">135 degrees</button>
+                        <button type="button" class="up_down_buttons border" ng-click="cam.toggleServo(180)">180 degrees</button>
+                    </div>
+                    <!-- don't change no more -->
                 </div>
             </div>
         </div>

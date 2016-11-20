@@ -1,11 +1,13 @@
 app.controller("GarageController", main);
 
 function main($scope, $location, AddressValueService) {
+    
     var vm = this;
-
+    
+    vm.videoIsLive = false;
     vm.garageDoorStatus = "Unknown";
 
-    vm.videoIsLive = false;
+    
 
     // REMEMBER TO CHANGE THIS DATA ONCE VIDEO CHANGES
     vm.garageVideoIP = AddressValueService.getFormattedGarageVideoIP();
