@@ -1,6 +1,82 @@
 <!-- ************************************************ -->
 <!-- ################## WEB CAMERA ################## -->
 <!-- ************************************************ -->
+<!DOCTYPE html>
+<html>
+<head>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#zero').click(function(){
+                    var a = new HMLHttpRequest();
+                    a.open("GET","http://192.168.1.124/zero.php");
+                    a.onreadystatechange=function(){
+                        if(a.readyState==4){
+                            if(a.status ==200){
+
+                            }
+                            else alert("HTTP ERROR");
+                        }
+                    }
+                    a.send();
+                });
+                $('#fourfive').click(function(){
+                    var a = new HMLHttpRequest();
+                    a.open("GET","http://192.168.1.124/fourfive.php");
+                    a.onreadystatechange=function(){
+                        if(a.readyState==4){
+                            if(a.status ==200){
+
+                            }
+                            else alert("HTTP ERROR");
+                        }
+                    }
+                    a.send();
+                });
+                $('#ninezero').click(function(){
+                    var a = new HMLHttpRequest();
+                    a.open("GET","http://192.168.1.124/ninezero.php");
+                    a.onreadystatechange=function(){
+                        if(a.readyState==4){
+                            if(a.status ==200){
+
+                            }
+                            else alert("HTTP ERROR");
+                        }
+                    }
+                    a.send();
+                });
+                $('#onethreefive').click(function(){
+                    var a = new HMLHttpRequest();
+                    a.open("GET","http://192.168.1.124/onethreefive.php");
+                    a.onreadystatechange=function(){
+                        if(a.readyState==4){
+                            if(a.status ==200){
+
+                            }
+                            else alert("HTTP ERROR");
+                        }
+                    }
+                    a.send();
+                });
+                $('#oneeighty').click(function(){
+                    var a = new HMLHttpRequest();
+                    a.open("GET","http://192.168.1.124/oneeighty.php");
+                    a.onreadystatechange=function(){
+                        if(a.readyState==4){
+                            if(a.status ==200){
+
+                            }
+                            else alert("HTTP ERROR");
+                        }
+                    }
+                    a.send();
+                });
+            });
+
+        </script>
+</head>
+
 <div >
     <!-- Side Bar -->
     <div id="sidebar" >
@@ -24,7 +100,15 @@
             <div id="card" style="width:80%; background-color: #16a085; background-image: none" class="videoBackgroundCard">
                 <div style="color: white">
                     <h1>Hornet Home Automation</h1>
-                    <h3>Web Camera</h3>
+                    <h3>Web Camera and Controller</h3>
+                    <body onload="process()">
+                    Enter the angle you would like to look at: <br>
+                    <button type="button" id="zero" style="color:black">0 degrees</button>
+                    <button type="button" id="fourfive" style="color:black">45 degrees</button>
+                    <button type="button" id="ninezero" style="color:black">90 degrees</button>
+                    <button type="button" id="onethreefive" style="color:black">135 degrees</button>
+                    <button type="button" id="oneeighty" style="color:black">180 degrees</button>
+                    </body>
                 </div>
                 <div style="background-color: #ecf0f1">
                     <br>
@@ -45,3 +129,4 @@
     </div>
     <!-- End of the Dashboard View-->
 </div>
+</html>
