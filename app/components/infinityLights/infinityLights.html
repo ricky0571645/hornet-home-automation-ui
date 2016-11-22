@@ -1,0 +1,64 @@
+<!-- ************************************************ -->
+<!-- ################## INFINITY LIGHTS ################## -->
+<!-- ************************************************ -->
+<div >
+    <!-- Side Bar -->
+    <div id="sidebar" >
+        <div >
+            <br>
+            <img src="./assets/img/TeamIcon.png" alt="logo" />
+            <br> <br>
+            <p><a href="#/dashboard" style="color:white">Dashboard</a></p>
+            <p><a href="#/settings" style="color:white">Settings</a></p>
+            <p><a href="#/about" style="color:white">About</a></p>
+            <p><a href="#/contact" style="color:white">Contact</a></p>
+            <p><a href="#/" style="color:white">Logout</a></p>
+            
+        </div>
+    </div>
+
+    <!-- Infinity lights control-->
+    <div style="margin-left: 100px" class="fade-in one" ng-controller="InfinityLightsController as infinity">
+
+        
+        <div class="col-md-12 " >
+            <div id="card" style="width:85%; background-color: #34495e; background-image: none" class="videoBackgroundCard">
+                <div style="color: white">
+                    <h1>Hornet Home Automation</h1>
+                    <h3>Infinity Mirror</h3>
+                    <!-- <hr style="border-top: 5px solid #ccc;">  -->
+                </div>
+                <div class="aboutCard " style="background-color: #ecf0f1;">
+                    <br>
+                    <h4>Select a color and watch the infinity mirror change!</h4>
+                    <div class="col-md-4 ">
+                        <button type="button" class="colorCards select" style="background-color: #c0392b" ng-click="infinity.toggleColor('red')">RED</button>
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <button type="button" class="colorCards select" style="background-color: #bdc3c7" ng-click="infinity.toggleColor('white')">WHITE</button>
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <button type="button" class="colorCards select" style="background-color: #16a085" ng-click="infinity.toggleColor('green')">GREEN</button>
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <button type="button" class="colorCards select" style="background-color: #f39c12" ng-click="infinity.toggleColor('yellow')">YELLOW</button>
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <button type="button" class="colorCards select" style="background-color: #2980b9" ng-click="infinity.toggleColor('blue')">BLUE</button>
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <button type="button" class="colorCards select" style="background-color: #9b59b6" ng-click="infinity.toggleColor('purple')">PURPLE</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end the col-md-12 -->
+    </div>
+    <!-- End of the Dashboard View-->
+</div>

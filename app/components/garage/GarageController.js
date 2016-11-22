@@ -7,15 +7,11 @@ function main($scope, $location, AddressValueService) {
     vm.videoIsLive = false;
     vm.garageDoorStatus = "Unknown";
 
-    
-
     // REMEMBER TO CHANGE THIS DATA ONCE VIDEO CHANGES
     vm.garageVideoIP = AddressValueService.getFormattedGarageVideoIP();
 
     vm.turnVideoFeedOn = function(){
-        if(vm.webCamIP != 0){
-            // vm.WebCamIP = "https://" + vm.WebCamIP;
-            console.log(vm.webCamIP);
+        if(vm.garageVideoIP != 0){
             vm.videoIsLive = true;
         }
     }
@@ -28,10 +24,10 @@ function main($scope, $location, AddressValueService) {
             // condition if the button is open or close
             var params="";
             if(isOpen == true){
-                params = "door=open";
+                params = "open";
             }
             else{
-                params = "door=close";
+                params = "close";
             }
             
             console.log(theURL + " " + params);
