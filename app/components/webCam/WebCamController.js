@@ -10,13 +10,17 @@ function main($scope, $location, AddressValueService) {
 
 
     // REMEMBER TO CHANGE THIS DATA ONCE VIDEO CHANGES
-    vm.webCamIP = AddressValueService.getFormattedWebCamIP();
+    vm.webCamIP = AddressValueService.getFormattedWebCamIP() + ":8081";
 
 
     vm.turnVideoFeedOn = function(){
+    	vm.webCamIP = AddressValueService.getFormattedWebCamIP() + ":8081";
         if(vm.webCamIP != 0 && vm.buttonText == "Turn Video On"){
-            // vm.WebCamIP = "https://" + vm.WebCamIP;
-            console.log(vm.webCamIP);
+        	var theURL = vm.webCamIP + ":8081";
+        	 //var params = "";
+        	 //params = ":8081";
+             //vm.WebCamIP = "https://" + vm.WebCamIP + ":8081";
+            console.log()
             vm.videoIsLive = true;
             vm.buttonText = "Turn Video Off";
         } else{
@@ -27,7 +31,7 @@ function main($scope, $location, AddressValueService) {
     //change from here
     vm.toggleServo = function(isOpen)
      {
-        //var garageServerIP = AddressValueService.getFormattedWebCamIP();
+        vm.webCamIP = AddressValueService.getFormattedWebCamIP();
         if(vm.webCamIP != '0'){
             var theURL = vm.webCamIP + '/';
             // condition if the button is open or close
@@ -53,6 +57,7 @@ function main($scope, $location, AddressValueService) {
                 console.log(response);
             });
         }
+        vm.webCamIP = AddressValueService.getFormattedWebCamIP() + ":8081";
      }
 
     var getRequest = function (theUrl, params, callback){
