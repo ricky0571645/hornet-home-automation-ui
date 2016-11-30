@@ -1,0 +1,17 @@
+.colorCards {
+    background-color: #545454;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 35px;
+    margin-bottom: 30px; 
+    height: 260px; 
+    color:white;
+    width:100%;
+}
+
+.select:hover
+{
+        box-shadow: inset 0 0 0 15px #2c3e50;
+}

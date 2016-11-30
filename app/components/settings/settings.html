@@ -51,7 +51,16 @@
                 </div>
 
                 <!-- Smart Mirror -->
-                 <div class="col-md-12 addressCards" style="background-color: #34495e">
+                 <div class="col-md-6 addressCards" style="background-color: #bdc3c7">
+                    <img src="./assets/img/arduino.png" alt="logo" style="width:90px; height:65px; margin-top: 35px;"/>
+                    <p class="aboutParagraph" style="text-align: center">
+                        Infinity Mirror:  
+                    </p>
+                    <input name="searchbox" onfocus="if (this.value=='https://www.google.com') this.value = ''" type="text" value={{settings.smartMirrorURL}} class="login_textBox" ng-model="settings.smartMirrorURL" style="width: 400px">
+                </div>
+
+                <!-- Smart Mirror -->
+                 <div class="col-md-6 addressCards" style="background-color: #34495e">
                     <img src="./assets/img/rpi.png" alt="logo" style="width:60px; height:60px; margin-top: 35px;"/>
                     <p class="aboutParagraph" style="text-align: center">
                         Smart Mirror URL:  

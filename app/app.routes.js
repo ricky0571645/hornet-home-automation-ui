@@ -19,6 +19,9 @@ app.config(['$routeProvider',function($routeProvider) {
 	.when('/settings', {
 		templateUrl: 'app/components/settings/settings.html'
 	})
+	.when('/infinityLights', {
+		templateUrl: 'app/components/infinityLights/infinityLights.html'
+	})
 	.otherwise({redirectTo:'/'});
 	
 }]);

@@ -19,8 +19,7 @@ function main($scope, $location, AddressValueService) {
     vm.homeItemStack.push(new homeItem("smartMirror", "Smart Mirror", "Active", './assets/img/mirror.png', true));
     vm.homeItemStack.push(new homeItem("webCam", "Web Camera", "Active", './assets/img/webcam-icon.png', true));
     vm.homeItemStack.push(new homeItem("garage", "Garage Door Controller", "Active", './assets/img/garage.png', true));
-    vm.homeItemStack.push(new homeItem("infinityMirror", "Infinity Mirror", "On", './assets/img/light_icon.png', false));
-    vm.homeItemStack.push(new homeItem("shutters", "Shutters", "On", './assets/img/light_icon.png', false));
+    vm.homeItemStack.push(new homeItem("infinityLights", "Infinity Lights", "On", './assets/img/light_icon.png', true));
     vm.homeItemStack.push(new homeItem("dogWater", "Dog Water Bowl", "Full", './assets/img/water.png', false));
     
 
@@ -73,6 +72,9 @@ function main($scope, $location, AddressValueService) {
         }
         if(item.itemName == "webCam"){
             $location.path("/webCam");
+        }
+        if(item.itemName == "infinityLights"){
+            $location.path("/infinityLights");
         }
         if(item.itemName == "smartMirror"){
             var smartMirrorURL = AddressValueService.getSmartMirrorURL();
